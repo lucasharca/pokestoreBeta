@@ -24,10 +24,11 @@ export const ProductList = styled.ul`
     background: #fff;
     border-radius: 4px;
     max-width: 300px;
+    max-height: 240px;
 
     img {
       align-self: center;
-      width: 150px;
+      width: 130px;
     }
     > strong {
       text-transform: capitalize;
@@ -95,5 +96,32 @@ export const ProductList = styled.ul`
       text-align: center;
       font-weight: bold;
     }
+  }
+`;
+
+export const Pagination = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  button {
+    width: 80px;
+    height: 40px;
+    border: none;
+    background-color: #ef5350;
+    border-radius: 4px;
+    color: #fff;
+    margin: 0 30px;
+
+    :hover {
+      background: ${darken(0.05, '#ef5350')};
+      transition: background 0.5s;
+    }
+  }
+
+  span {
+    color: #fff;
+    font-weight: bold;
+    font-size: 25px;
   }
 `;

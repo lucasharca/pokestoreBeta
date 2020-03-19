@@ -1,5 +1,3 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
-
 ## PokeStore
 
 In this project I created an online store example using pokémon. This particular store only contains fire type pokémon.

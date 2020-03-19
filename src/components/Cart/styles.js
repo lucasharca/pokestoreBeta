@@ -5,7 +5,7 @@ export const Container = styled.header`
   margin: 10px;
   border-radius: 4px;
   min-width: 275px;
-  max-height: 802px;
+  height: 750px;
   background: #fff;
 
   @media (max-width: 1075px) {
