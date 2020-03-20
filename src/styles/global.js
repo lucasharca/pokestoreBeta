@@ -9,7 +9,7 @@ export default createGlobalStyle`
   }
 
   body{
-    background: rgba(25, 25, 32) repeat center top;
+    background: rgb(25, 25, 32) repeat center top;
     background-size: 50px;
     -webkit-font-smoothing: antialiased;
   }

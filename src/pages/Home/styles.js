@@ -2,14 +2,27 @@ import styled from 'styled-components';
 import { darken } from 'polished';
 
 export const Container = styled.div`
-  max-width: 1060px;
+  max-width: 1100px;
   display: grid;
   grid-template-columns: 3fr 1fr;
+  background: rgb(25, 25, 32);
+  height: 88vh;
   margin: 0px auto;
-  @media (max-width: 1075px) {
+  padding: 0 15px;
+
+  @media (max-width: 1070px) {
+    grid-template-columns: 2fr 1fr;
+  }
+
+  @media (max-width: 990px) {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  @media (max-width: 660px) {
     grid-template-columns: 1fr;
   }
 `;
+export const ProductContainer = styled.div``;
 
 export const ProductList = styled.ul`
   display: grid;
@@ -29,6 +42,7 @@ export const ProductList = styled.ul`
     img {
       align-self: center;
       width: 130px;
+      height: 130px;
     }
     > strong {
       text-transform: capitalize;
@@ -44,20 +58,12 @@ export const ProductList = styled.ul`
     }
   }
 
-  @media (max-width: 1075px) {
-    grid-template-columns: repeat(3, 1fr);
-  }
-
-  @media (max-width: 960px) {
+  @media (max-width: 1070px) {
     grid-template-columns: repeat(2, 1fr);
-
-    li {
-      max-width: 400px;
-    }
   }
 
-  @media (max-width: 830px) {
-    grid-template-columns: repeat(1, 1fr);
+  @media (max-width: 990px) {
+    grid-template-columns: 1fr;
 
     li {
       max-width: 100%;
@@ -65,7 +71,6 @@ export const ProductList = styled.ul`
   }
 
   button {
-    background: #ef5350;
     color: #fff;
     border: 0;
     border-radius: 0 0 4px 4px;
@@ -75,11 +80,6 @@ export const ProductList = styled.ul`
 
     display: flex;
     align-items: center;
-
-    &:hover {
-      background: ${darken(0.05, '#ef5350')};
-      transition: background 0.5s;
-    }
 
     div {
       display: flex;
@@ -95,6 +95,19 @@ export const ProductList = styled.ul`
       flex: 1;
       text-align: center;
       font-weight: bold;
+    }
+  }
+
+  .inCart {
+    background: #ddd;
+    cursor: auto;
+  }
+
+  .notInCart {
+    background: #ef5350;
+    &:hover {
+      background: ${darken(0.05, '#ef5350')};
+      transition: background 0.5s;
     }
   }
 `;

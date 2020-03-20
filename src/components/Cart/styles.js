@@ -1,47 +1,86 @@
 import styled from 'styled-components';
 
-export const Container = styled.header`
+export const Container = styled.div`
   display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   margin: 10px;
   border-radius: 4px;
   min-width: 275px;
-  height: 750px;
+  height: 744px;
   background: #fff;
+`;
 
-  @media (max-width: 1075px) {
-    display: none;
+export const Header = styled.header`
+  width: 100%;
+  font-weight: bold;
+  font-size: 25px;
+  align-self: center;
+  padding: 5px;
+  width: 98%;
+  max-height: 650px;
+  text-align: center;
+  overflow: auto;
+  overflow-x: hidden;
+
+  .headDiv {
+    border-bottom: 1px solid #888;
+    margin: 0 auto;
+    width: 80%;
   }
 `;
 
-export const Content = styled.div`
+export const PokeContainer = styled.ul`
   display: flex;
   justify-content: space-between;
-  height: 60px;
   align-items: center;
-  width: 100%;
-  max-width: 900px;
-  margin: 0 auto;
-  input {
-    height: 40px;
-    font-size: 20px;
-    padding: 5px;
-    border: none;
-    border-radius: 4px 0 0 4px;
-    vertical-align: bottom;
-  }
-  button {
-    height: 40px;
-    width: 50px;
-    font-size: 20px;
-    vertical-align: bottom;
-    padding: 5px;
-    padding-top: 10px;
-    border-radius: 0 4px 4px 0;
-    border: none;
-    background: #fff;
-    color: #444;
-  }
+  padding-right: 15px;
+  font-size: 16px;
+
   img {
-    height: 65px;
+    height: 50px;
   }
+
+  div {
+    display: flex;
+    align-items: center;
+  }
+
+  button {
+    border: none;
+    width: 25px;
+    height: 25px;
+    background: none;
+    font-weight: bold;
+    padding-bottom: 2px;
+    padding-left: 5px;
+    :hover {
+      color: #ef5350;
+    }
+  }
+`;
+
+export const Footer = styled.footer`
+  button {
+    width: 100%;
+    border: none;
+    height: 40px;
+    background: #ef5350;
+    font-weight: bold;
+    font-size: 20px;
+    color: #fff;
+    border-radius: 0 0 4px 4px;
+  }
+`;
+
+export const TotalCount = styled.div`
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 10px;
+  height: 40px;
+  font-weight: bold;
+  font-size: 20px;
+
+  background: #ddd;
 `;

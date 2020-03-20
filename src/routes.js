@@ -6,7 +6,7 @@ import Home from './pages/Home';
 export default function Routes() {
   return (
     <Switch>
-      <Route path="/" exact component={Home} />
+      <Route path="/home" exact component={Home} />
     </Switch>
   );
 }

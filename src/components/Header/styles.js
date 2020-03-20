@@ -14,7 +14,7 @@ export const Content = styled.div`
   height: 75px;
   align-items: center;
   width: 100%;
-  max-width: 900px;
+  max-width: 1000px;
   margin: 0 auto;
   vertical-align: center;
 
