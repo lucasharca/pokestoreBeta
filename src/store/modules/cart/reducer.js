@@ -23,6 +23,11 @@ export default function cart(state = INITIAL_STATE, action) {
         }
       });
 
+    case '@cart/CLEAR':
+      return produce(state, draft => {
+        draft.products = [];
+      });
+
     default:
       return state;
   }

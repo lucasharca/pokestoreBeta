@@ -12,6 +12,11 @@ export default function Header() {
   const [search, setSearch] = useState('');
   const dispatch = useDispatch();
 
+  function handleSearch(e) {
+    e.preventDefault();
+    dispatch(setSearchValue(search));
+  }
+
   return (
     <Container>
       <Content>
@@ -19,19 +24,16 @@ export default function Header() {
           <img src={Icon} alt="pokeball" />
         </Link>
 
-        <div>
+        <form onSubmit={handleSearch}>
           <input
             placeholder="Pesquisar..."
             value={search}
             onChange={e => setSearch(e.target.value)}
           />
-          <button
-            type="button"
-            onClick={() => dispatch(setSearchValue(search))}
-          >
+          <button type="submit">
             <FaSearch />
           </button>
-        </div>
+        </form>
       </Content>
     </Container>
   );

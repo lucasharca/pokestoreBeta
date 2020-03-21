@@ -15,6 +15,7 @@ import Cart from '../../components/Cart';
 
 export default function Home() {
   const [pokemon, setPokemon] = useState([]);
+  const [pokemonCopy, setPokemonCopy] = useState([]);
   const [page, setPage] = useState(1);
   const [firstIndex, setFirstIndex] = useState(0);
   const [lastIndex, setLastIndex] = useState(9);
@@ -43,18 +44,36 @@ export default function Home() {
         number: dexNumber(item.pokemon.url),
       }));
       setPokemon(data);
+      setPokemonCopy(data);
     }
     getPokemon();
   }, []);
 
-  function changePage(num) {
-    if (num > 0) {
-      setPage(page + 1);
-    } else {
-      setPage(page - 1);
+  useEffect(() => {
+    if (page !== 1) {
+      setPage(1);
+      setFirstIndex(0);
+      setLastIndex(9);
     }
-    setFirstIndex(firstIndex + num);
-    setLastIndex(lastIndex + num);
+    const searchedPokemon = pokemonCopy.filter(item =>
+      item.pokemon.name.includes(searchString.toLowerCase())
+    );
+    if (searchedPokemon.length === 0) {
+      return setPokemon(pokemonCopy);
+    }
+    return setPokemon(searchedPokemon);
+  }, [searchString]);
+
+  function pageUp() {
+    setPage(page + 1);
+    setFirstIndex(firstIndex + 10);
+    setLastIndex(lastIndex + 10);
+  }
+
+  function pageDown() {
+    setPage(page - 1);
+    setFirstIndex(firstIndex - 10);
+    setLastIndex(lastIndex - 10);
   }
 
   return (
@@ -101,7 +120,7 @@ export default function Home() {
         <div>
           <button
             type="button"
-            onClick={() => changePage(-10)}
+            onClick={() => pageDown()}
             disabled={firstIndex <= 0}
           >
             <FaLessThan />
@@ -109,7 +128,7 @@ export default function Home() {
           <span>{page}</span>
           <button
             type="button"
-            onClick={() => changePage(10)}
+            onClick={() => pageUp()}
             disabled={lastIndex >= pokemon.length}
           >
             <FaGreaterThan />
