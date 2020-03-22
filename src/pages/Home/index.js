@@ -118,17 +118,13 @@ export default function Home() {
       <Cart />
       <Pagination>
         <div>
-          <button
-            type="button"
-            onClick={() => pageDown()}
-            disabled={firstIndex <= 0}
-          >
+          <button type="button" onClick={pageDown} disabled={firstIndex <= 0}>
             <FaLessThan />
           </button>
           <span>{page}</span>
           <button
             type="button"
-            onClick={() => pageUp()}
+            onClick={pageUp}
             disabled={lastIndex >= pokemon.length}
           >
             <FaGreaterThan />

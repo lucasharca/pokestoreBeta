@@ -13,6 +13,11 @@ export default function cart(state = INITIAL_STATE, action) {
         draft.pokemon = pokemon;
       });
 
+    case '@search/CLEAR_SEARCH':
+      return produce(state, draft => {
+        draft.pokemon = [];
+      });
+
     default:
       return state;
   }
