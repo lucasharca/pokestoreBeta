@@ -29,6 +29,12 @@ export const Content = styled.div`
     }
   }
 
+@media(max-width: 660px){
+  form {
+    max-width: 100%;
+  }
+}
+
   input {
     height: 40px;
     font-size: 20px;

@@ -2,15 +2,20 @@ import styled from 'styled-components';
 import { darken } from 'polished';
 
 export const Container = styled.div`
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  margin: 10px;
-  border-radius: 4px;
-  min-width: 275px;
-  height: 744px;
-  background: #fff;
-`;
+         display: flex;
+         flex-direction: column;
+         justify-content: space-between;
+         margin: 10px;
+         border-radius: 4px;
+         min-width: 275px;
+         height: 744px;
+         background: #fff;
+
+         
+         @media (max-width: 660px) {
+           height: 300px;
+         }
+       `;
 
 export const Header = styled.header`
   width: 100%;
