@@ -1,4 +1,6 @@
 ## PokeStore
+You can preview this app at: https://pokestore-br.herokuapp.com/
+Heroku needs 10 seconds do "wake up", if the page doesn't load wait 1 minute and try reloading.
 
 In this project I created an online store example using pokémon. This particular store only contains fire type pokémon.
 The tech used is ReactJS, together with pokeAPI as a source of pokémon data.
