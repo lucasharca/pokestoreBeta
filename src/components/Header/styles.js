@@ -60,7 +60,7 @@ export const Content = styled.div`
     padding-top: 2px;
   }
 
-  @media (max-width: 600px) {
+  @media (max-width: 670px) {
     display: flex;
     flex-direction: row;
     justify-content: center;

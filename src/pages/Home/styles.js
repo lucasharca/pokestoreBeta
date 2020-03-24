@@ -113,28 +113,35 @@ export const ProductList = styled.ul`
 `;
 
 export const Pagination = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+         display: flex;
+         flex-direction: column;
+         align-items: center;
 
-  button {
-    width: 80px;
-    height: 40px;
-    border: none;
-    background-color: #ef5350;
-    border-radius: 4px;
-    color: #fff;
-    margin: 0 30px;
+         button {
+           width: 80px;
+           height: 40px;
+           border: none;
+           background-color: #ef5350;
+           border-radius: 4px;
+           color: #fff;
+           margin: 0 30px;
 
-    :hover {
-      background: ${darken(0.05, '#ef5350')};
-      transition: background 0.5s;
-    }
-  }
+           :hover {
+             background: ${darken(0.05, '#ef5350')};
+             transition: background 0.5s;
+           }
+         }
 
-  span {
-    color: #fff;
-    font-weight: bold;
-    font-size: 25px;
-  }
-`;
+         span {
+           color: #fff;
+           font-weight: bold;
+           font-size: 25px;
+         }
+         .disabled {
+           background: #ddd;
+           cursor: default;
+           :hover {
+             background: #ddd;
+           }
+         }
+       `;
