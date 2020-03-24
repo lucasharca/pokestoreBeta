@@ -1,5 +1,5 @@
-import styled from 'styled-components';
 import Modal from 'styled-react-modal';
+import { darken } from 'polished';
 
 export const StyledModal = Modal.styled`
   width: 30rem;
@@ -35,7 +35,7 @@ export const StyledModal = Modal.styled`
     flex-direction: column;
     text-align: center;
     justify-content: center;
-    background: linear-gradient(to top right, #ef5350 25%, #ffffff 110%);
+    background: linear-gradient(to top right, #ef5350 25%, #ffffff 200%);
     color: #fff;
     font-weight: bold;
     border-bottom: 5px solid black;
@@ -52,7 +52,7 @@ export const StyledModal = Modal.styled`
     flex-direction: column;
     text-align: center;
     justify-content: center;
-    background: linear-gradient(to top right, #000000 -17%, #ffffff 70%);
+    background: linear-gradient(to top right, #000000 -50%, #ffffff 70%);
     width: 100%;
     height: 50%;
     padding-bottom: 40px;
@@ -64,6 +64,11 @@ export const StyledModal = Modal.styled`
     color: #fff;
     font-weight: bold;
     background: #1870d5;
+
+    &:hover {
+      background: ${darken(0.05, '#1870d5')};
+      transition: background 0.5s;
+    }
   }
 
   .back {
@@ -71,5 +76,10 @@ export const StyledModal = Modal.styled`
     color: #fff;
     font-weight: bold;
     background: #ef5350;
+
+    &:hover {
+      background: ${darken(0.05, '#ef5350')};
+      transition: background 0.5s;
+    }
   }
 `;

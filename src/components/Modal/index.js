@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 
 import { hideModal } from '../../store/modules/modal/actions';
@@ -7,11 +7,7 @@ import { StyledModal } from './styles';
 
 export default function Modal() {
   const dispatch = useDispatch();
-  let isOpen = useSelector(state => state.modal.modal);
-
-  function toggleModal(e) {
-    isOpen = !isOpen;
-  }
+  const isOpen = useSelector(state => state.modal.modal);
 
   return (
     <div>
