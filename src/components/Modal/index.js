@@ -20,24 +20,28 @@ export default function Modal() {
         onBackgroundClick={() => dispatch(hideModal(false))}
         onEscapeKeydown={() => dispatch(hideModal(false))}
       >
-        <span> Obrigado! </span>
-        <span> Você Ganhou de volta R$xxx,xx</span>
-        <span>
-          <button
-            type="button"
-            className="end"
-            onClick={() => dispatch(hideModal(true))}
-          >
-            Finalizar
-          </button>
-          <button
-            type="button"
-            className="back"
-            onClick={() => dispatch(hideModal(false))}
-          >
-            Voltar
-          </button>
-        </span>
+        <div className="topPokebal">
+          <span>Compra realizada com sucesso!</span>
+          <span> Retorno de R$xxx,xxx</span>
+        </div>
+        <div className="bottomPokeball">
+          <span>
+            <button
+              type="button"
+              className="end"
+              onClick={() => dispatch(hideModal(true))}
+            >
+              Finalizar
+            </button>
+            <button
+              type="button"
+              className="back"
+              onClick={() => dispatch(hideModal(false))}
+            >
+              Voltar
+            </button>
+          </span>
+        </div>
       </StyledModal>
     </div>
   );
