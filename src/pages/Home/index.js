@@ -8,7 +8,10 @@ import dexNumber from '../../util/dexNumber';
 import PokeShadow from '../../assets/images/poke-shadow.png';
 import { ProductList, Container, ProductContainer } from './styles';
 
-import { addToCartRequest } from '../../store/modules/cart/actions';
+import {
+  addToCartRequest,
+  removeFromCart,
+} from '../../store/modules/cart/actions';
 
 import Cart from '../../components/Cart';
 
@@ -16,7 +19,7 @@ export default function Home() {
   const [pokemon, setPokemon] = useState([]);
   const [pokemonCopy, setPokemonCopy] = useState([]);
 
-  const products = useSelector(state => state.cart.products);
+  const productsCart = useSelector(state => state.cart.products);
   const searchString = useSelector(state => state.search.pokemon);
 
   const productInCart = (productName, cart) => {
@@ -30,6 +33,16 @@ export default function Home() {
 
   function handleAddProduct(product) {
     dispatch(addToCartRequest(product));
+  }
+
+  function handleAddOrRemoveProduct(name, number, cart) {
+    if (productInCart(name, cart) === 'inCart') {
+      dispatch(removeFromCart(number));
+    } else {
+      handleAddProduct({ name, number });
+    }
+    /* console.log(productInCart(name, cart));
+    console.log(name, number, cart); */
   }
 
   useEffect(() => {
@@ -74,17 +87,24 @@ export default function Home() {
 
               <button
                 type="button"
-                onClick={() =>
-                  handleAddProduct({
+                onClick={
+                  () =>
+                    handleAddOrRemoveProduct(
+                      product.pokemon.name,
+                      product.number,
+                      productsCart
+                    )
+                  /* handleAddProduct({
                     name: product.pokemon.name,
                     number: product.number,
-                  })
+                  }) */
                 }
-                className={productInCart(product.pokemon.name, products)}
+                className={productInCart(product.pokemon.name, productsCart)}
               >
                 <span>
-                  {productInCart(product.pokemon.name, products) === 'inCart'
-                    ? 'NO CARRINHO'
+                  {productInCart(product.pokemon.name, productsCart) ===
+                  'inCart'
+                    ? 'REMOVER DO CARRINHO'
                     : 'ADICIONAR AO CARRINHO'}
                 </span>
               </button>

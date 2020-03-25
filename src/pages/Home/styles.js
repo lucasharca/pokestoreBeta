@@ -100,7 +100,6 @@ export const ProductList = styled.ul`
 
   .inCart {
     background: #ddd;
-    cursor: auto;
   }
 
   .notInCart {
