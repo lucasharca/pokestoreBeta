@@ -24,7 +24,7 @@ export default function Header() {
         <div>
           <span>
             <Link to="/">
-              <img src={Icon} alt="pokeball" />
+              <img src={Icon} alt="pokeball" className="badge" />
             </Link>
           </span>
           <span>

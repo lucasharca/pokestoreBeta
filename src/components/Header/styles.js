@@ -4,7 +4,7 @@ export const Container = styled.header`
   display: flex;
   height: 75px;
   align-items: center;
-  background: #ef5350;
+  background: linear-gradient(to right, #105e9c, #74ccf4);
   padding: 0 15px;
 `;
 
@@ -29,11 +29,11 @@ export const Content = styled.div`
     }
   }
 
-@media(max-width: 660px){
-  form {
-    max-width: 100%;
+  @media (max-width: 660px) {
+    form {
+      max-width: 100%;
+    }
   }
-}
 
   input {
     height: 40px;
@@ -58,6 +58,12 @@ export const Content = styled.div`
   img {
     height: 65px;
     padding-top: 2px;
+  }
+
+  .badge {
+    border: 1px solid #105e9c;
+    border-radius: 50%;
+    background: #105e9c;
   }
 
   @media (max-width: 670px) {
